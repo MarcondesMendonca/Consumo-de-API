@@ -12,7 +12,8 @@ using (HttpClient client = new HttpClient())
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;
 
         // LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
-        LinqOrder.ExibirListaDeArtistasOrdenados(musicas);
+        //LinqOrder.ExibirListaDeArtistasOrdenados(musicas);
+        LinqFilter.FiletarArtistasPorGeneroMusical(musicas, "rock");
        
     }
     catch(Exception ex)
