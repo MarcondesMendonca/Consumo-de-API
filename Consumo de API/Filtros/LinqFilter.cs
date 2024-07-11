@@ -7,7 +7,7 @@ internal class LinqFilter
     public static void FiltrarTodosOsGenerosMusicais(List<Musica> musicas)
     {
         var todosOsGenerosMusicais = musicas.Select(generos => generos.Genero).Distinct().ToList();
-        foreach (var genero in todosOsGenerosMusicais) 
+        foreach (var genero in todosOsGenerosMusicais)
             Console.WriteLine($"- {genero}");
     }
 
@@ -25,4 +25,20 @@ public static void FiletarArtistasPorGeneroMusical(List<Musica> musicas, string 
         Console.WriteLine($"- {artista}");
     }
 }
+
+    public static void FiltrarMusicasDeUmArtista(List<Musica> musicas, string nomeDoArtista)
+    {
+        var musicasDoArtista = musicas.Where(musica => musica.Artista!.Equals
+            (nomeDoArtista)).ToList();
+
+        Console.WriteLine(nomeDoArtista);
+
+        foreach(var musica in musicasDoArtista)
+        {
+            Console.WriteLine($"- {musica.Nome}");
+        }
+
+    }
+
+
 }
